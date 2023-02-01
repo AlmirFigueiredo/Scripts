@@ -44,6 +44,7 @@ number_pages = quantity_pages()
 
 info_units = {'name': [], 'address': [], 'phone': []}
 
+# Create function to verify if is there a phone number available:
 def istherephone(complete_address):
     return (len(complete_address) == 2)
 
@@ -64,6 +65,7 @@ for page_index in range(1, number_pages):
         else:
             phone = None
         
+        # Print all information:
         print('=' * 200)
         print(f'Unit: {name}')
         print(f'Address: {address}')
