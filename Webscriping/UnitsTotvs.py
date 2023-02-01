@@ -9,3 +9,11 @@ headers = {'User-Agent': "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KH
 # Declare url address:
 url = 'https://www.totvs.com/unidade/page/'
 
+# Create html Session:
+session = HTMLSession()
+
+#Create Function to get parsing:
+def getparse(url):
+    r = session.get(url)
+    soup = BeautifulSoup(r.text, 'html.parser')
+    return soup
