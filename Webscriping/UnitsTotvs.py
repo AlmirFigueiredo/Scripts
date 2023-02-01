@@ -44,6 +44,9 @@ number_pages = quantity_pages()
 
 info_units = {'name': [], 'address': [], 'phone': []}
 
+def istherephone(complete_address):
+    return (len(complete_address) == 2)
+
 
 #Get information for each page:
 for page_index in range(1, number_pages):
@@ -56,4 +59,4 @@ for page_index in range(1, number_pages):
         name = unit.find('h3', class_=re.compile('h4 text-dark font-weight-bolder mb-1')).get_text().strip()
         complete_address = unit.find_all('p', class_=re.compile('mb-0'))
         address = complete_address.text
-        
+
