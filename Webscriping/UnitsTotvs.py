@@ -58,9 +58,14 @@ for page_index in range(1, number_pages):
     for unit in units:
         name = unit.find('h3', class_=re.compile('h4 text-dark font-weight-bolder mb-1')).get_text().strip()
         complete_address = unit.find_all('p', class_=re.compile('mb-0'))
-        address = complete_address.text
+        address = complete_address[0].text
         if istherephone(complete_address):
             phone = complete_address[1].text
         else:
             phone = None
         
+        print('=' * 200)
+        print(f'Unit: {name}')
+        print(f'Address: {address}')
+        print(f'Phone: {phone}')
+        print('='*200)
