@@ -2,3 +2,10 @@ import requests
 import re
 from requests_html import HTMLSession
 from bs4 import BeautifulSoup
+
+# Declare User-Agent to avoid problems with permissions:
+headers = {'User-Agent': "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 "
+                         "Safari/537.36"}
+# Declare url address:
+url = 'https://www.totvs.com/unidade/page/'
+
