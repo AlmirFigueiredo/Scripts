@@ -40,4 +40,14 @@ def quantity_pages():
     last_page = current_page
     return last_page
 
+number_pages = quantity_pages()
 
+info_units = {'name': [], 'address': [], 'phone': []}
+
+
+#Get information for each page:
+for page_index in range(1, number_pages):
+    current_page = f'https://www.totvs.com/unidade/page/{page_index}'
+    soup = getparse(current_page)
+    units = soup.find_all('a', class_=re.compile('card card-simple'))
+    
