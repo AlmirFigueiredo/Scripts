@@ -25,5 +25,19 @@ def istherenextpage(soup):
         return True
     else:
         return False
-        
+
+# Create function to calculate the number of pages:
+def quantity_pages():
+    start_page = 1
+    current_page = start_page
+    while True:
+        url_current_page = url + str(current_page)
+        soup = getparse(url_current_page)
+        if istherenextpage(soup):
+            current_page += 1
+        else:
+            break
+    last_page = current_page
+    return last_page
+
 
