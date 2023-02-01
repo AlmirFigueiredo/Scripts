@@ -50,7 +50,7 @@ def istherephone(complete_address):
 
 
 #Get information for each page:
-for page_index in range(1, number_pages):
+for page_index in range(1, number_pages+1):
     current_page = f'https://www.totvs.com/unidade/page/{page_index}'
     soup = getparse(current_page)
     units = soup.find_all('a', class_=re.compile('card card-simple'))
