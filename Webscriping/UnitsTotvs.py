@@ -50,4 +50,10 @@ for page_index in range(1, number_pages):
     current_page = f'https://www.totvs.com/unidade/page/{page_index}'
     soup = getparse(current_page)
     units = soup.find_all('a', class_=re.compile('card card-simple'))
-    
+
+    #Get informataion for each unit:
+    for unit in units:
+        name = unit.find('h3', class_=re.compile('h4 text-dark font-weight-bolder mb-1')).get_text().strip()
+        complete_address = unit.find_all('p', class_=re.compile('mb-0'))
+        address = complete_address.text
+        
